@@ -1,19 +1,24 @@
-# 🔍 Exploratory Data Analysis w/ SQL: Job Market Analytics
+# 🔍 Exploratory Data Analysis with SQL: Data Engineer Job Market (Course Project)
 
 ![EDA Project Overview](../images/1_1_Project1_EDA.png)
+*Image: course material by Luke Barousse.*
 
-A SQL project analyzing the data engineer job market using real world job posting data. It demonstrates my ability to **write production-quality analytical SQL, design efficient queries, and turn business questions into data-driven insights**.
+> 📚 **Course project.** I followed Luke Barousse's
+> [SQL for Data Engineering course](https://youtu.be/UjhFbq4uU2Y?si=e-J75vY2hJKwYXVx) step by step and wrote these
+> queries while following the video. The dataset, schema and base questions come
+> from the course. Materials are reused with the author's permission
+> ([source](https://youtu.be/UjhFbq4uU2Y?si=e-J75vY2hJKwYXVx)).
 
 ---
 
-## 🧾 Executive Summary (For Hiring Managers)
+## 🧾 Summary
 
-- ✅ **Project scope:** Built **3 analytical queries** that answer key questions about the data engineer job market  
-- ✅ **Data modeling:** Used **multi-table joins** across fact and dimension tables to extract insights  
-- ✅ **Analytics:** Applied **aggregations, filtering, and sorting** to find top skills by demand, salary, and overall value  
-- ✅ **Outcomes:** Delivered **actionable insights** on SQL/Python dominance, cloud trends, and salary patterns
+- ✅ **Scope:** followed the course to write 3 analytical queries about the data engineer job market
+- ✅ **Data model:** practiced multi-table joins across fact, dimension and bridge tables
+- ✅ **Analytics:** practiced aggregations, filtering and sorting to rank skills by demand, salary and a combined score
+- ✅ **Results:** The queries helped gather important findings regarding the current data job market.
 
-If you only have a minute, review these:
+Quick links:
 
 1. [`01_top_demanded_skills.sql`](./01_top_demanded_skills.sql) – demand analysis with multi-table joins  
 2. [`02_top_paying_skills.sql`](./02_top_paying_skills.sql) – salary analysis with aggregations  
@@ -29,9 +34,10 @@ Job market analysts need to answer questions like:
 - 💰 **Highest paid:** *Which skills command the highest salaries?*  
 - ⚖️ **Best trade-off:** *What is the optimal skill set balancing demand and compensation?*  
 
-This project analyzes a **data warehouse** built using a star schema design. The warehouse structure consists of:
+The course provides a data warehouse with a star schema. The warehouse structure consists of:
 
 ![Data Warehouse Schema](../images/1_2_Data_Warehouse.png)
+*Schema diagram: course material by Luke Barousse.*
 
 - **Fact Table:** `job_postings_fact` - Central table containing job posting details (job titles, locations, salaries, dates, etc.)
 - **Dimension Tables:** 
@@ -39,7 +45,7 @@ This project analyzes a **data warehouse** built using a star schema design. The
   - `skills_dim` - Skills catalog with skill names and types
 - **Bridge Table:** `skills_job_dim` - Resolves the many-to-many relationship between job postings and skills
 
-By querying across these interconnected tables, I extracted insights about skill demand, salary patterns, and optimal skill combinations for data engineering roles.  
+By querying across these interconnected tables, I explored skill demand, salary patterns and a combined score.  
 
 ---
 
@@ -75,15 +81,15 @@ By querying across these interconnected tables, I extracted insights about skill
 ### Key Insights
 
 - 🧠 Core languages: SQL and Python each appear in ~29,000 job postings, making them the most demanded skills
-- ☁️ Cloud platforms: AWS and Azure are critical for modern data engineering roles- 
+- ☁️ Cloud platforms: AWS and Azure are critical for modern data engineering roles 
 - 🧱 Infra & tooling: Kubernetes, Docker, and Terraform are associated with premium salaries
 - 🔥 Big data tools: Apache Spark shows strong demand with competitive compensation
 
 ---
 
-## 💻 SQL Skills Demonstrated
+## 💻 SQL Techniques Practiced
 
-### Query Design & Optimization
+### Query Design
 
 - **Complex Joins**: Multi-table `INNER JOIN` operations across `job_postings_fact`, `skills_job_dim`, and `skills_dim`
 - **Aggregations**: `COUNT()`, `MEDIAN()`, `ROUND()` for statistical analysis
